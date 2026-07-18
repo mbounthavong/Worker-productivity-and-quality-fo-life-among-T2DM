@@ -1,0 +1,217 @@
+NOTE: Jenner v1.5.37 (build v1.5.37+886f95a5f1.20260717T051227Z.x86_64-unknown-linux-gnu)
+
+NOTE: Option OBS changed to 100.
+NOTE: Fileref INRAW1 assigned to temp file.
+NOTE: DATA _null_
+
+NOTE: Writing to fileref INRAW1 (/tmp/work/r_2a2e9a65dc5e4d92874e70617478baf1/work/288b9c05-2237-4f84-874d-519ff2d78fd0/jenner_temp_INRAW1_46d33567e343419590ad8795fb98005f.tmp)
+NOTE: DATA _null_ completed. Output written to fileref INRAW1 (/tmp/work/r_2a2e9a65dc5e4d92874e70617478baf1/work/288b9c05-2237-4f84-874d-519ff2d78fd0/jenner_temp_INRAW1_46d33567e343419590ad8795fb98005f.tmp)
+NOTE: DATA INPUT_SAS_FILE
+
+NOTE: Processing inline DATALINES (5 lines)
+
+NOTE: Read 5 rows from DATALINES.
+NOTE: Wrote INPUT_SAS_FILE (5 rows, 7 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: Library IN1 uses 1 concatenated paths.
+NOTE: Library OUT1 uses 1 concatenated paths.
+NOTE: Option TITLE changed to Clinical Classifications Software Refined (CCSR) for ICD-10-CM Diagnoses.
+NOTE: Option TITLE2 changed to Mapping Program.
+NOTE: DATA DXCCSR
+
+NOTE: Reading from fileref INRAW1 (work/288b9c05-2237-4f84-874d-519ff2d78fd0/jenner_temp_INRAW1_46d33567e343419590ad8795fb98005f.tmp)
+
+NOTE: Read 14 rows from INRAW1.
+NOTE: Wrote DXCCSR (14 rows, 22 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC FORMAT library=WORK
+
+NOTE: CNTLIN: Loaded 14 format entries from DXCCSR
+NOTE: DATA DXCCSRL
+
+
+NOTE: Read 14 rows from DXCCSR.
+NOTE: Wrote DXCCSRL (28 rows, 5 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC SORT data=DXCCSRL
+
+NOTE: 17 duplicate observations were deleted.
+NOTE: Read 28 rows from DXCCSRL.
+NOTE: Wrote DXCCSRL (11 rows, 5 columns).
+NOTE: PROC SORT statement used.
+NOTE: PROC FORMAT library=WORK
+
+NOTE: CNTLIN: Loaded 11 format entries from DXCCSRL
+NOTE: DATA DXCCSRDEFT
+
+
+NOTE: Read 14 rows from DXCCSR.
+NOTE: Wrote DXCCSRDEFT (15 rows, 5 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC SORT data=DXCCSRDEFT
+
+NOTE: Read 15 rows from DXCCSRDEFT.
+NOTE: Wrote DXCCSRDEFT (15 rows, 5 columns).
+NOTE: PROC SORT statement used.
+NOTE: PROC FORMAT library=WORK
+
+NOTE: CNTLIN: Loaded 15 format entries from DXCCSRDEFT
+NOTE: DATA DXCCSRDEFT
+
+
+NOTE: Read 14 rows from DXCCSR.
+NOTE: Wrote DXCCSRDEFT (15 rows, 5 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC SORT data=DXCCSRDEFT
+
+NOTE: Read 15 rows from DXCCSRDEFT.
+NOTE: Wrote DXCCSRDEFT (15 rows, 5 columns).
+NOTE: PROC SORT statement used.
+NOTE: PROC FORMAT library=WORK
+
+NOTE: CNTLIN: Loaded 15 format entries from DXCCSRDEFT
+NOTE: DATA Body_sys
+
+NOTE: Reading from fileref INRAW1 (work/288b9c05-2237-4f84-874d-519ff2d78fd0/jenner_temp_INRAW1_46d33567e343419590ad8795fb98005f.tmp)
+
+NOTE: Read 14 rows from INRAW1.
+NOTE: Wrote Body_sys (27 rows, 2 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC SORT data=Body_sys
+
+NOTE: Read 27 rows from Body_sys.
+NOTE: Wrote Body_sys (27 rows, 2 columns).
+NOTE: PROC SORT statement used.
+NOTE: DATA body_max
+
+
+NOTE: Read 27 rows from body_sys.
+NOTE: Wrote body_max (5 rows, 2 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC SQL 
+
+NOTE: Macro variable BODY_ = CIR END EYE GEN NVS
+NOTE: PROC SQL statement used.
+NOTE: DATA null
+
+
+NOTE: Read 5 rows from body_max.
+NOTE: Wrote null (5 rows, 2 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA null
+
+
+NOTE: Read 5 rows from body_max.
+NOTE: Wrote null (5 rows, 3 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+verify macro definition:
+mnbody=5
+maxCIR_ = 019
+maxEND_ = 010
+maxEYE_ = 005
+maxGEN_ = 003
+maxNVS_ = 020
+NOTE: PROC SORT data=IN1.INPUT_SAS_FILE
+
+NOTE: Read 5 rows from IN1.INPUT_SAS_FILE.
+NOTE: Wrote INPUT_SAS_FILESkinny (5 rows, 7 columns).
+NOTE: PROC SORT statement used.
+NOTE: DATA IP_in
+
+
+NOTE: Read 5 rows from INPUT_SAS_FILESkinny.
+NOTE: Wrote IP_in (5 rows, 7 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA IP_out_vt dxccsr_flags
+
+NOTE: Multi-output DATA step splits stream into: IP_out_vt dxccsr_flags
+
+NOTE: Read 5 rows from IP_in.
+NOTE: Wrote IP_out_vt (23 rows, 23 columns).
+NOTE: Wrote dxccsr_flags (5 rows, 23 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA IP_out_vt
+
+NOTE: Stream 1 processed 23 rows, max BY-group size: 6 (O(1) memory verified)
+NOTE: Stream 2 processed 5 rows, max BY-group size: 1 (O(1) memory verified)
+
+NOTE: Wrote IP_out_vt (23 rows, 6 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC SORT data=IP_out_vt
+
+NOTE: Read 23 rows from IP_out_vt.
+NOTE: Wrote IP_out_vt (23 rows, 6 columns).
+NOTE: PROC SORT statement used.
+NOTE: Option TITLE changed to Vertical file.
+NOTE: PROC CONTENTS data=IP_out_vt
+
+NOTE: PROC CONTENTS completed: 23 observations, 6 variables
+NOTE: Option TITLE2 changed to Sample print of vertical file.
+NOTE: PROC PRINT data=IP_out_vt
+
+NOTE: PROC PRINT completed: 10 observations printed, 6 variables
+NOTE: DATA OUT1.OUTPUT_VERT_FILE_NAME
+
+
+NOTE: Read 23 rows from IP_out_vt.
+NOTE: Wrote OUT1.OUTPUT_VERT_FILE_NAME (23 rows, 6 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA IP_dflt_file
+
+
+NOTE: Read 23 rows from IP_out_vt.
+NOTE: Wrote IP_dflt_file (5 rows, 2 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA IP_dflt_file
+
+NOTE: Stream 1 processed 5 rows, max BY-group size: 1 (O(1) memory verified)
+NOTE: Stream 2 processed 5 rows, max BY-group size: 1 (O(1) memory verified)
+
+NOTE: Wrote IP_dflt_file (5 rows, 3 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA OUT1.OUTPUT_DFLT_FILE_NAME
+
+
+NOTE: Read 5 rows from IP_dflt_file.
+NOTE: Wrote OUT1.OUTPUT_DFLT_FILE_NAME (5 rows, 3 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: Option TITLE changed to Default DXCCSR file.
+NOTE: PROC CONTENTS data=OUT1.OUTPUT_DFLT_FILE_NAME
+
+NOTE: PROC CONTENTS completed: 5 observations, 3 variables
+NOTE: Option TITLE2 changed to Sample print of default DXCCSR file.
+NOTE: PROC PRINT data=OUT1.OUTPUT_DFLT_FILE_NAME
+
+NOTE: PROC PRINT completed: 5 observations printed, 3 variables

@@ -1,0 +1,13 @@
+{
+  "_captured_at": "2026-07-18T14:28:06Z",
+  "_captured_run_id": "r_2a2e9a65dc5e4d92874e70617478baf1",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: Wrote DXCCSR (14 rows, 22 columns).",
+    "NOTE: Wrote OUT1.OUTPUT_VERT_FILE_NAME (23 rows, 6 columns).",
+    "NOTE: Wrote OUT1.OUTPUT_DFLT_FILE_NAME (5 rows, 3 columns)."
+  ],
+  "log_does_not_contain": ["ERROR:", "[JENNER-ERROR"],
+  "diagnostics": {"parse_warnings": [], "runtime_warnings": []}
+}

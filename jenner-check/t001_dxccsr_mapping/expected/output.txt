@@ -1,0 +1,77 @@
+                        Clinical Classifications Software Refined (CCSR) for ICD-10-CM Diagnoses
+                                                    Mapping Program
+
+                                                     Vertical file
+
+
+PROC CONTENTS
+-------------------------------------------------------------------------------
+
+Data Set Name: IP_out_vt
+Observations:  23
+Variables:     6
+
+Variables (in creation order):
+
+  #  Variable        Type    Len  Format  Label
+---  --------------  ----  -----  ------  ----------------------------------------
+  1  DXCCSR          Char      6          CCSR category for ICD-10-CM diagnosis
+  2  DX_POSITION      Num      3          Position of code in input diagnosis array
+  3  DEFAULT_DXCCSR  Char      1          Indication of default CCSR for principal/first-listed ICD-10-CM diagnosis
+  4  DXCCSR_VERSION  Char      6          Version of CCSR for ICD-10-CM diagnoses
+  5  KEY              Num      8          
+  6  _NULL_          Char    200          
+
+-------------------------------------------------------------------------------
+
+                                                     Vertical file
+                                             Sample print of vertical file
+
+
+  Obs  DXCCSR  DX_POSITION  DEFAULT_DXCCSR  DXCCSR_VERSION  KEY  _NULL_
+-----  ------  -----------  --------------  --------------  ---  ------
+    1  END003            1  Y               2025.1            1
+    2  END005            1  N               2025.1            1
+    3  GEN003            1  N               2025.1            1
+    4  GEN003            2                  2025.1            1
+    5  CIR007            3                  2025.1            1
+    6  END003            1  Y               2025.1            2
+    7  END005            1  N               2025.1            2
+    8  GEN001            1  N               2025.1            2
+    9  END010            2                  2025.1            2
+   10  END003            1  Y               2025.1            3
+
+... 13 more observations (showing 10 of 23)
+
+                                                  Default DXCCSR file
+
+
+PROC CONTENTS
+-------------------------------------------------------------------------------
+
+Data Set Name: OUT1.OUTPUT_DFLT_FILE_NAME
+Observations:  5
+Variables:     3
+
+Variables (in alphabetical order):
+
+  #  Variable            Type    Len  Format  Label
+---  ------------------  ----  -----  ------  ----------------------------------------
+  1  DXCCSR_DEFAULT_DX1  Char      6          Default CCSR for principal/first-listed ICD-10-CM diagnosis
+  2  DXCCSR_VERSION      Char      6          Version of CCSR for ICD-10-CM diagnoses
+  3  KEY                  Num      8          
+
+-------------------------------------------------------------------------------
+
+                                                  Default DXCCSR file
+                                          Sample print of default DXCCSR file
+
+
+  Obs  DXCCSR_DEFAULT_DX1  DXCCSR_VERSION  KEY
+-----  ------------------  --------------  ---
+    1  END003              2025.1            1
+    2  END003              2025.1            2
+    3  END003              2025.1            3
+    4  END003              2025.1            4
+    5  END003              2025.1            5
+

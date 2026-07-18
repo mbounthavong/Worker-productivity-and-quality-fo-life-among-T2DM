@@ -1,0 +1,7 @@
+{
+  "bundle": "t001_dxccsr_mapping",
+  "source_file": "HCUP Crosswalk ICD10-CCSR/DXCCSR_v2025-1/DXCCSR_Mapping_Program_v2025-1.sas",
+  "source_blob_sha": "989371115e2efa4338421c8aa167f816d5addfbb",
+  "source_commit": "5c3984af97b192ef15db72447fcb903bba4a48a5",
+  "notes": "AHRQ HCUP CCSR-for-ICD-10-CM mapping program: builds SAS informats from the DXCCSR crosswalk (PROC FORMAT CNTLIN) then assigns CCSR categories across a diagnosis array, emitting vertical + default output files. Section 1/2 logic byte-identical to upstream. Adapted only the program's own USER-MUST-MODIFY config: INRAW1 crosswalk -> 14-row sample (real T2DM ICD-10 codes from the repo's DXCCSR_v2025-1.csv) materialized via a TEMP fileref in autoexec; input discharge dataset (not in repo) -> 5-record mock of Type 2 diabetes encounters in autoexec; LIBNAME IN1/OUT1 -> WORK; NUMDX 40->5; HORZ=0 (horizontal file's hardcoded MBD-body-system drop needs the full crosswalk). Sample crosswalk single quotes stripped so informat keys match plain discharge codes (normal DSD behavior). Vertical file resolves END003/END005/GEN001/GEN003/CIR007/END010 categories; default file picks END003 for all five diabetic records."
+}
